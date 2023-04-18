@@ -16,7 +16,7 @@ class Bicycle
     protected int $maxGear;
     protected WheelSize $wheelSize;
 
-    public function __construct(WheelSize $wheelSize = WheelSize::size_20, $chainRingTeeth = 52, $sprocketTeeth = 19, $maxGear = 10)
+    public function __construct(WheelSize $wheelSize = WheelSize::size_20,$maxGear=10, $chainRingTeeth = 52, $sprocketTeeth = 19)
     {
         $this->chainRingTeeth = $chainRingTeeth;
         $this->sprocketTeeth = $sprocketTeeth;
@@ -77,9 +77,7 @@ class CheapBicycle extends Bicycle
 {
     public function __construct(WheelSize $wheelSize)
     {
-        $this->maxGear = 7;
-        $this->gear = $this->maxGear;
-        parent::__construct($wheelSize);
+        parent::__construct($wheelSize,7);
     }
 
     public function calculateSprocketTeeth(): int|float
@@ -92,9 +90,7 @@ class ExpensiveBicycle extends Bicycle
 {
     public function __construct(WheelSize $wheelSize)
     {
-        $this->maxGear = 30;
-        $this->gear = $this->maxGear;
-        parent::__construct($wheelSize);
+        parent::__construct($wheelSize,30);
     }
 
     public function calculateSprocketTeeth(): int|float
@@ -102,17 +98,3 @@ class ExpensiveBicycle extends Bicycle
         return $this->sprocketTeeth = 46 - floor(1.2 * $this->gear);
     }
 }
-
-class Solution
-{
-    public static function test()
-    {
-        $exp = new ExpensiveBicycle(WheelSize::size_20);
-        $exp->decreaseGear();
-        echo $exp->calculateSprocketTeeth();
-
-
-    }
-}
-
-Solution::test();

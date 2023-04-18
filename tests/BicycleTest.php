@@ -37,14 +37,14 @@ class BicycleTest extends TestCase
     {
         $cheapBicycle = new CheapBicycle(WheelSize::size_20);
         $cheapBicycle->decreaseGear();
-        $this->assertEquals(12, $cheapBicycle->calculateSprocketTeeth());
+        $this->assertEquals(18, $cheapBicycle->calculateSprocketTeeth());
     }
 
     public function testExpensiveBicycleCalculateSprocketTeeth(): void
     {
         $expensiveBicycle = new ExpensiveBicycle(WheelSize::size_20);
         $expensiveBicycle->decreaseGear();
-        $this->assertEquals(36, $expensiveBicycle->calculateSprocketTeeth());
+        $this->assertEquals(12, $expensiveBicycle->calculateSprocketTeeth());
     }
 
 }
