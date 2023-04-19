@@ -1,0 +1,5 @@
+{
+  "require-dev": {
+    "vendor/phpunit/phpunit": "^10.1"
+  }
+}

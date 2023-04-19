@@ -101,7 +101,7 @@ class ExpensiveBicycle extends Bicycle
 
 class Solution
 {
-    public static function main()
+    public static function main(): void
     {
         $bike = new Bicycle();
         $bike->decreaseGear();
